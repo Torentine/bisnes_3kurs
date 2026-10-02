@@ -1,0 +1,74 @@
+# Python and local virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env/
+.python-version.local
+
+# Project-local Poetry installation and its download cache (see README)
+/.tools/
+/.poetry-cache/
+
+# Tests, linting, type checking and coverage
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Notebook and ML runtime output
+.ipynb_checkpoints/
+/artifacts/
+/outputs/
+/runs/
+/logs/
+/reports/generated/
+/data/processed/
+/data/interim/
+catboost_info/
+lightning_logs/
+mlruns/
+wandb/
+*.joblib
+*.pkl
+*.pickle
+*.log
+
+# Secrets and machine-specific agent settings
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+.claude/settings.local.json
+.claude/.cache/
+
+# Editors and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Keep source CSV, notebooks, docs, shared instructions and Poetry lock/config.
+
+# Local working notes for the AI assistant and internal docs (not published)
+/CLAUDE.md
+/docs/

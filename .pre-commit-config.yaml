@@ -1,0 +1,33 @@
+# Install once per clone: `poetry run pre-commit install`
+# Check everything:        `poetry run pre-commit run --all-files`
+# The ruff hook version must match the `ruff` pin in pyproject.toml (dev group).
+# Archived research notebooks and source CSV files are kept byte-for-byte.
+exclude: ^(Stages_Notebooks/|CompanyCapitalizationEvalution\.ipynb$|financials(_src)?\.csv$)
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.10
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+        files: ^(src|tests)/
+        types_or: [python, pyi]
+      - id: ruff-format
+        files: ^(src|tests)/
+        types_or: [python, pyi]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: detect-private-key
+      - id: check-added-large-files
+        args: [--maxkb=1024]
